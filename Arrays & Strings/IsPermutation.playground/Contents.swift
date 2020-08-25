@@ -14,6 +14,7 @@ import SwiftUI
 extension String {
     /// Checks if `self` is a permutation of `otherString`.
     func isPermutation(of otherString: String) -> Bool {
+        if self.count != otherString.count { return false }
         let characterArray = [Character](self)
         let otherCharacterArray = [Character](otherString)
         var characterFrequencyHashTable = [Character: Int]()
@@ -46,20 +47,3 @@ extension String {
 func isPermutation(_ stringOne: String, _ stringTwo: String) -> Bool {
     stringOne.isPermutation(of: stringTwo) || stringTwo.isPermutation(of: stringOne)
 }
-
-func main() {
-    let tests = [
-        ["abcdefghijk", "gkc"],
-        ["fed", "abcdefghijk"],
-        ["cab", "abcdefghijk"],
-        ["xyz", "abcdefghijk"],
-        ["apple", "abcdefghijkpple"],
-        ["", ""]
-    ]
-
-    for test in tests {
-        print(isPermutation(test[0], test[1]))
-    }
-}
-
-main()
