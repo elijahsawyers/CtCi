@@ -15,7 +15,7 @@ import SwiftUI
 
 func rotate<T>(_ matrix: inout [[T]], _ n: Int) {
     for i in 0..<n/2 {
-        for j in i..<n-1 {
+        for j in i..<n-1-i {
             let tmp = matrix[i][j]
 
             for k in 0..<4 {
@@ -35,20 +35,3 @@ func rotate<T>(_ matrix: inout [[T]], _ n: Int) {
         }
     }
 }
-
-func main() {
-    var test = [
-        [01, 02, 03, 04],
-        [05, 06, 07, 08],
-        [09, 10, 11, 12],
-        [13, 14, 15, 16]
-    ]
-    
-    rotate(&test, 4)
-    
-    for row in test {
-        print(row)
-    }
-}
-
-main()
