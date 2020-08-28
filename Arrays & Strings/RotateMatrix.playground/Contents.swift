@@ -13,6 +13,23 @@ Solutions 2 is presented below.
 
 import SwiftUI
 
+/// Given a matrix, rotate it 90deg.
+///
+/// The matrix:
+///
+/// [
+///     [1, 2, 3]
+///     [4, 5, 6]
+///     [7, 8, 9]
+/// ]
+///
+/// Would become:
+///
+/// [
+///     [7, 4, 1]
+///     [8, 5, 2]
+///     [9, 6, 3]
+/// ]
 func rotate<T>(_ matrix: inout [[T]], _ n: Int) {
     for i in 0..<n/2 {
         for j in i..<n-1-i {
